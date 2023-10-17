@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px; 
+            width: 80%;
+        }
+
+        input[type="date"],
+        select {
+            width: 45%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: inline-block;
+            width: 25%;
+        }
+        .time-label {
+            margin-left: 10px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-container input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none; 
+            border-radius: 5px;
+        }
+        .form-container input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #050000;
+            border-radius: 5px;
+        }
+        .form-container input[type="email"] {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #050000;
+            border-radius: 5px;
+        }
+        .form-container input[type="tel"] {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #050000;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Appointment Form</h2>
+        <form id="appointment-form" action="your-action-url" method="post">
+            <label for="name">Name:</label><br><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone:</label><br><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            
+            <label for="time" class="time-label">Time for Call:</label><br>
+            <input type="date" id="date" name="date" required>
+            <select id="time" name="time" required>
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="1:00 PM">1:00 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="3:00 PM">3:00 PM</option>
+                <option value="4:00 PM">4:00 PM</option>
+                <option value="5:00 PM">5:00 PM</option>
+                <option value="6:00 PM">6:00 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+            </select><br><br>
+
+            <input type="submit" value="GET A CALL">
+        </form>
+    </div>
+    <script>
+        // JavaScript to log form data
+        document.getElementById("appointment-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from actually submitting
+
+            // Get the form input values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
+
+            // Log the input data to the console
+            console.log("Name: " + name);
+            console.log("Email: " + email);
+            console.log("Phone: " + phone);
+            console.log("Date: " + date);
+            console.log("Time for Call: " + time);
+        });
+    </script>
+</body>
+</html>
